@@ -1,0 +1,33 @@
+<p-dialog header="Calls Per Month" [modal]="true" position="center" [(visible)]="callspermonthdisplay" class="scroll"
+  [style]="{'width':'65vW'}" [closable]="true" [draggable]="false" [resizable]="false" (onHide)="Close()">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p-dropdown [options]="states" [(ngModel)]="selectedState" placeholder="Select a State"
+        optionLabel="state" optionValue="value" [showClear]="true" (ngModelChange)="getcalldata()"></p-dropdown>
+      </div>
+      <div class="col">
+        <p-dropdown [options]="years" [(ngModel)]="selectedYear" placeholder="Select a Year"
+        optionLabel="year" optionValue="value" [showClear]="true" (ngModelChange)="getcalldata()"></p-dropdown>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <p-table [value]="CallData" [paginator]="true" [rows]="7" [showCurrentPageReport]="true"
+        responsiveLayout="scroll" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Month</th>
+            <th>Call Count</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-customer>
+          <tr>
+            <td>{{customer.month}}</td>
+            <td>{{customer.calls}}</td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+  </div>
+</p-dialog>

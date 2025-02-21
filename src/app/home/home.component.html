@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h2>Welcome to 911 Call Analysis</h2>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <p-card>
+        <span (click)="displayCallsperstate()">Calls Per State</span>
+      </p-card>
+    </div>
+    <div class="col-md-4">
+      <p-card>
+        <span (click)="displayCallsperyear()">Calls Per Year</span>
+      </p-card>
+    </div>
+    <div class="col-md-4">
+      <p-card>
+        <span (click)="displayCallsPerMonth()">Calls Per Month</span>
+      </p-card>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="offset-md-3 col-md-3">
+      <p-card>
+        <span (click)="displayCallsPerEmergency()"> Calls Per Type of Emergency</span>
+      </p-card>
+    </div>
+    <div class="col-md-3">
+      <p-card>
+        <span (click)="displayCallsPerSources()">Calls From Sources</span>
+      </p-card>
+    </div>
+  </div>
+  <div *ngIf="callsperstate">
+    <app-callsperstate [display]="callsperstate" (rdisplay)="closeDialog($event)"></app-callsperstate>
+  </div>
+  <div *ngIf="callsperyear">
+    <app-callsperyear [callsperyeardisplay]="callsperyear" (callsperyearrdisplay)="closeCallsPerYear($event)"></app-callsperyear>
+  </div>
+  <div *ngIf="callspermonth">
+    <app-callspermonth [callspermonthdisplay]="callspermonth" (callspermonthrdisplay)="closeCallsPerMonth($event)"></app-callspermonth>
+  </div>
+  <div *ngIf="callsperemergency">
+    <app-callsperemergency [callsperemergencydisplay]="callsperemergency" (callsperemergencyrdisplay)="closeCallsPerEmergency($event)"></app-callsperemergency>
+  </div>
+  <div *ngIf="callspersources">
+    <app-callspersource [callspersourcesdisplay]="callspersources" (callspersourcesrdisplay)="closeCallsPerSources($event)"></app-callspersource>
+  </div>
+</div>

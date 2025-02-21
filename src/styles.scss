@@ -1,0 +1,40 @@
+
+html, body {
+  // background-image: url('assets/image.png'); /* Adjust the path based on your folder structure */
+  // background-size: cover; /* This will make the image cover the entire background */
+  // /* Add more styles as needed */
+  // // background-position: center; /* Center the image */
+  // // background-repeat: no-repeat; /* Do not repeat the image */
+}
+.p-card .p-card-content {
+  padding: 0 0 !important;
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+.p-card .p-card-body {
+  padding: 1rem;
+  cursor: pointer !important;
+}
+
+.p-card {
+  background: #fff6f6 !important;
+}
+.p-inputtext {
+  width: 100% !important;
+}
+.p-button{
+  width:  100% !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #161616 !important;
+  color: white !important;
+}
+
+.p-dropdown{
+  width: 100% !important;
+}
+
+
